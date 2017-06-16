@@ -1,17 +1,13 @@
 {%- from "freeipa/map.jinja" import client,server with context %}
 
-{% if client.get('ssh', True) %}
 include:
-- openssh.server
-{% endif %}
+- openssh
 
 sssd_service:
   service.running:
     - name: sssd
-    {% if client.get('ssh', True) %}
     - watch_in:
-      - service: openssh_server_service
-    {% endif %}
+      - service: openssh
     - watch:
       - file: sssd_conf
 
