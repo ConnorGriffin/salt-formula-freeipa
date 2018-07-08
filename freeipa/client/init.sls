@@ -103,7 +103,6 @@ freeipa_client_install:
         --server {{ client.server }}
         --domain {{ client.domain }}
         {%- if client.realm is defined %} --realm {{ client.realm }}{%- endif %}
-        --hostname {{ ipa_host }}
         {%- if otp is defined %}
         -w {{ otp }}
         {%- else %}
