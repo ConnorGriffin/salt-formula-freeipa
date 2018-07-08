@@ -44,7 +44,7 @@ freeipa_host_add:
             ],
             {
               "all": false,
-              "force": false,
+              "force": true,
               "no_members": false,
               "no_reverse": false,
               "random": false,
